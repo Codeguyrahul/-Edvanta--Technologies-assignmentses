@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="codeEditorApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+ 
+    <title> Code Editor </title>
+</head>
+<body ng-controller="CodeEditorController">
+    <!-- Code Editor Container -->
+    <div class="code-editor">
+        <!-- Editor Toolbar -->
+        <div class="editor-toolbar">
+
+            <!-- Copy Button -->
+            <button class="button copy" ng-click="copyCode()" ng-disabled="isLocked">Copy</button>
+            <!-- Save Button -->
+            <button class="button save" ng-click="saveCode()">Save</button>
+            <!-- Lock/Unlock Button -->
+            <button class="button lock" ng-click="toggleLock()">
+                {{ isLocked ? 'Unlock' : 'Lock' }}
+            </button>
+        </div>
+
+     
+        <div>
+        <!-- Code Textarea -->
+        <textarea class="code-area" ng-model="code" ng-readonly="isLocked" spellcheck="false"></textarea>
+        <!-- Code Textarea with Line Numbers -->
+  
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
